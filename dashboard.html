@@ -7,6 +7,12 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+
   <title>Election Dashboard</title>
 </head>
 <body>
@@ -20,8 +26,8 @@
                 <li><button class="nav-item" onclick="showSection('registration')">Voter Registration</button></li>
                 <li><button class="nav-item" onclick="showSection('search')">Search Voter</button></li>
             </ul>
-            <div class="logout-section">
-                <button class="logout-button" onclick="logout()">Logout</button>
+            <div class="logout-section" id="sidebar">
+                <button class="logout-button" id="logoutButton" onclick="logout()">Logout</button>
                 <p class="footer-info">
                   &copy; TEYA 2025 Election System <br>
                   Developed by <span class="developer-name">John Marit</span>

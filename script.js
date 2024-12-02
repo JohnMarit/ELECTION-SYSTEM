@@ -92,4 +92,20 @@ function logout() {
     }
   });
   
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Disable caching of this page
+    if (!localStorage.getItem("isLoggedIn")) {
+      alert("You are not logged in!");
+      window.location.href = "index.html";
+    }
+  
+    // Prevent back navigation
+    window.onpopstate = () => {
+      if (!localStorage.getItem("isLoggedIn")) {
+        window.location.href = "index.html";
+      }
+    };
+  });
+  
   
