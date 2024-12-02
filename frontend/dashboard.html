@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <title>Election Dashboard</title>
+</head>
+<body>
+  <div class="dashboard-container">
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar">
+            <img src="images/logo.png" alt="Election System Logo" class="logo">
+            <h2>ELECTION 2025</h2>
+            <ul>
+                <li><button class="nav-item" onclick="showSection('stats')">Dashboard Stats</button></li>
+                <li><button class="nav-item" onclick="showSection('registration')">Voter Registration</button></li>
+                <li><button class="nav-item" onclick="showSection('search')">Search Voter</button></li>
+            </ul>
+            <div class="logout-section">
+                <button class="logout-button" onclick="logout()">Logout</button>
+                <p class="footer-info">
+                  &copy; TEYA 2025 Election System <br>
+                  Developed by <span class="developer-name">John Marit</span>
+                </p>
+              </div>              
+            </nav>
+
+            <!-- Main Content -->
+            <div class="content">
+            <!-- Stats Section -->
+            <div id="stats" class="section active">
+                <h1>Dashboard Stats</h1>
+                <div class="stats-container">
+                <!-- Registered Voters Card -->
+                <div class="stat-card">
+                    <div class="icon"><i class="fas fa-users"></i></div> <!-- For Registered Voters -->
+                    <div class="number" id="totalVoters">0</div>
+                    <div class="label">Registered Voters</div>
+                </div>
+            
+                <!-- People Who Voted Card -->
+                <div class="stat-card">
+                    <div class="icon"><i class="fas fa-check-circle"></i></div> <!-- For People Who Voted -->
+                    <div class="number" id="votedCount">0</div>
+                    <div class="label">People Who Voted</div>
+                </div>
+            
+                <!-- People Who Haven't Voted Card -->
+                <div class="stat-card">
+                    <div class="icon"><i class="fas fa-hourglass-half"></i></div> <!-- For People Who Haven't Voted -->
+                    <div class="number" id="notVotedCount">0</div>
+                    <div class="label">People Who Haven't Voted</div>
+                </div>
+                </div>
+            </div>
+            
+
+            <!-- Registration Section -->
+            <div id="registration" class="section">
+                <h1>Voter Registration</h1>
+                <form>
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="text" id="idNumber" placeholder="ID Number" required>
+                <input type="text" id="payam" placeholder="Payam" required>
+                <input type="number" id="voterId" placeholder="Voter ID" required>
+                <button type="button" onclick="addVoter()">Add Voter</button>
+                </form>
+            </div>
+
+            <!-- Search Section -->
+            <div id="search" class="section">
+                <h1>Search Voter</h1>
+                <form>
+                <input type="text" id="searchName" placeholder="Name" required>
+                <input type="text" id="searchVoterId" placeholder="Voter ID" required>
+                <button type="button" onclick="searchVoter()">Search</button>
+                </form>
+                <div id="searchResult"></div>
+            </div>
+
+                                  
+            </div>
+     
+  </div>
+
+  <script src="script.js"></script>
+  <script type="module" src="./src/main.js"></script> <!-- Dashboard logic -->
+  <script type="module" src="./src/voters.js"></script> <!-- Voter-related logic -->
+  <script type="module" src="./src/stats.js"></script> <!-- Stats-related logic -->
+</body>
+</html>
