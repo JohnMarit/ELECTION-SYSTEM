@@ -55,24 +55,6 @@ function logout() {
       window.location.href = "index.html";
     }
   }
-  
-  
-
-  document.getElementById("loginForm").addEventListener("submit", (event) => {
-    event.preventDefault();
-  
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
-  
-    if (username === "Admin" && password === "1234567890") {
-      localStorage.setItem("isLoggedIn", "true"); // Mark user as logged in
-      window.location.href = "dashboard.html"; // Redirect to the dashboard
-    } else {
-      alert("Invalid login credentials!");
-    }
-  });
-
-
 
 
   document.getElementById("logoutButton").addEventListener("click", () => {
@@ -80,32 +62,4 @@ function logout() {
     alert("You have been logged out.");
     window.location.href = "index.html"; // Redirect to the login page
   });
-
-  
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-  
-    if (!isLoggedIn) {
-      // If not logged in, redirect to the login page
-      window.location.href = "index.html";
-    }
-  });
-  
-
-  document.addEventListener("DOMContentLoaded", () => {
-    // Disable caching of this page
-    if (!localStorage.getItem("isLoggedIn")) {
-      alert("You are not logged in!");
-      window.location.href = "index.html";
-    }
-  
-    // Prevent back navigation
-    window.onpopstate = () => {
-      if (!localStorage.getItem("isLoggedIn")) {
-        window.location.href = "index.html";
-      }
-    };
-  });
-  
   

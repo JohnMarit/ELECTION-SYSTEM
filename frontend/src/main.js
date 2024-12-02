@@ -16,3 +16,4 @@ document.getElementById("addVoterForm").addEventListener("submit", async (event)
     alert("All fields are required!");
   }
 });
+

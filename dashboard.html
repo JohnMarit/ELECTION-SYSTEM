@@ -18,7 +18,7 @@
 <body>
   <div class="dashboard-container">
             <!-- Sidebar Navigation -->
-            <nav class="sidebar">
+            <nav class="sidebar" id="sidebar">
             <img src="frontend/images/logo.png" alt="Election System Logo" class="logo">
             <h2>ELECTION 2025</h2>
             <ul>
@@ -26,7 +26,7 @@
                 <li><button class="nav-item" onclick="showSection('registration')">Voter Registration</button></li>
                 <li><button class="nav-item" onclick="showSection('search')">Search Voter</button></li>
             </ul>
-            <div class="logout-section" id="sidebar">
+            <div class="logout-section" >
                 <button class="logout-button" id="logoutButton" onclick="logout()">Logout</button>
                 <p class="footer-info">
                   &copy; TEYA 2025 Election System <br>
@@ -97,5 +97,6 @@
   <script type="module" src="./src/main.js"></script> <!-- Dashboard logic -->
   <script type="module" src="./src/voters.js"></script> <!-- Voter-related logic -->
   <script type="module" src="./src/stats.js"></script> <!-- Stats-related logic -->
+  <script type="module" src="dashboard.js"></script> 
 </body>
 </html>
