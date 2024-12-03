@@ -44,21 +44,21 @@
                 <!-- Registered Voters Card -->
                 <div class="stat-card">
                     <div class="icon"><i class="fas fa-users"></i></div> <!-- For Registered Voters -->
-                    <div class="number" id="totalVoters">0</div>
+                    <div class="number" id="totalVoters"><span id="totalVoters">0</span></div>
                     <div class="label">Registered Voters</div>
                 </div>
             
                 <!-- People Who Voted Card -->
                 <div class="stat-card">
                     <div class="icon"><i class="fas fa-check-circle"></i></div> <!-- For People Who Voted -->
-                    <div class="number" id="votedCount">0</div>
+                    <div class="number" id="votedCount"><span id="votedCount">0</span></div>
                     <div class="label">People Who Voted</div>
                 </div>
             
                 <!-- People Who Haven't Voted Card -->
                 <div class="stat-card">
                     <div class="icon"><i class="fas fa-hourglass-half"></i></div> <!-- For People Who Haven't Voted -->
-                    <div class="number" id="notVotedCount">0</div>
+                    <div class="number" id="notVotedCount"><span id="notVotedCount">0</span></div>
                     <div class="label">People Who Haven't Voted</div>
                 </div>
                 </div>
@@ -68,23 +68,24 @@
             <!-- Registration Section -->
             <div id="registration" class="section">
                 <h1>Voter Registration</h1>
-                <form>
-                <input type="text" id="name" placeholder="Name" required>
-                <input type="text" id="idNumber" placeholder="ID Number" required>
-                <input type="text" id="payam" placeholder="Payam" required>
-                <input type="number" id="voterId" placeholder="Voter ID" required>
-                <button type="button" onclick="addVoter()">Add Voter</button>
+                <form id="registrationForm">
+                  <input type="text" id="name" placeholder="Name" required />
+                  <input type="text" id="idNumber" placeholder="ID Number" required />
+                  <input type="text" id="payam" placeholder="Payam" required />
+                  <input type="text" id="voterId" placeholder="Voter ID" required />
+                  <button type="submit" onclick="addVoter()">Add Voter</button>
                 </form>
             </div>
 
             <!-- Search Section -->
             <div id="search" class="section">
                 <h1>Search Voter</h1>
-                <form>
-                <input type="text" id="searchName" placeholder="Name" required>
-                <input type="text" id="searchVoterId" placeholder="Voter ID" required>
-                <button type="button" onclick="searchVoter()">Search</button>
+                <form  id="searchForm">
+                <input type="text" id="searchName" id="searchQuery" placeholder="Name" required>
+                <input type="text" id="searchVoterId" id="searchQuery" placeholder="Voter ID" required>
+                <button type="submit" onclick="searchVoter()">Search</button>
                 </form>
+                <div id="searchResult"></div>
                 <div id="searchResult"></div>
             </div>
 
@@ -94,9 +95,8 @@
   </div>
 
   <script src="script.js"></script>
-  <script type="module" src="./src/main.js"></script> <!-- Dashboard logic -->
-  <script type="module" src="./src/voters.js"></script> <!-- Voter-related logic -->
-  <script type="module" src="./src/stats.js"></script> <!-- Stats-related logic -->
+  <script type="module" src="firebase.js"></script> 
+ 
   <script type="module" src="dashboard.js"></script> 
 </body>
 </html>
